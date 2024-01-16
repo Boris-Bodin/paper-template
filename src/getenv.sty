@@ -1,0 +1,19 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Scub LaTeX Package - Get Env
+%
+% Get an environment variable
+% The variable name is the second argument
+% The variable value is stored in the first argument
+% If the first argument is empty, the variable value is stored in the second argument
+%
+% Created by Boris Bodin
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{getenv}[2023/07/28 v1.0 Get Env]
+
+\RequirePackage{catchfile}
+\newcommand{\getenv}[2][]{%
+    \CatchFileEdef{\temp}{"|kpsewhich --var-value #2"}{\endlinechar=-1}%
+    \if\relax\detokenize{#1}\relax\temp\else\let#1\temp\fi}

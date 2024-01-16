@@ -1,0 +1,33 @@
+\documentclass[article]{archi}
+\usepackage{blindtext}
+
+\date{\today}
+
+\title{Template\\Document}
+\headerTitle{Template Document}
+
+
+\addauthor{Boris Bodin}{Lead Tech}
+
+\addversion{0.1}{27/07/2023}{Initialisation du document}
+
+\begin{document}
+
+    \maketitle
+
+    \makecartouche
+
+    \tableofcontents
+
+    \section*{Introduction}
+    \addcontentsline{toc}{section}{Introduction}
+    \blindtext
+
+    \input{chapter/the-section}
+    \input{chapter/other-section}
+
+    \phantomsection
+    \bibliographystyle{unsrt}
+    \bibliography{sample}
+
+\end{document}
